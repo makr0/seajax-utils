@@ -34,4 +34,4 @@ Todos
 -----
 * Currently, only Marker, Ellipse and Polygon are implemented. All else is yet to come...
 * Prepare a minified version using the [Closure Compiler] (http://code.google.com/closure/compiler/)
-
+* Confirm whether this works with zoom.it
