@@ -5,6 +5,8 @@ A utility library for the [Seadragon AJAX viewer] (http://expression.microsoft.c
 
 Code Example
 -----
+Note that the coordinate system for no.5 Seajax Utils is the original image's pixel coordinates! 
+
      function addOverlays() {
         var marker = new No5.Seajax.Shapes.Marker("pushpin-icon.png");
         marker.attachTo(viewer, 2000, 1750);
