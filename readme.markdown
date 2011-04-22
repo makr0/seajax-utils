@@ -26,12 +26,12 @@ Note that the coordinate system for no.5 Seajax Utils is the original image's pi
         setTimeout(function() { ellipse.redraw(viewer); }, 500);
      }
 
-To set drawing attributes, animation behavior, event handlers, etc. you can get hold of the Raphael element with the getElement() method. Example:
+To set drawing attributes, animation behavior, event handlers, etc. you can get hold of the Raphael element with the getElement() method:
 
      ellipse.getElement().attr{("fill":"#ff0000", "fill-opacity":0.5, "stroke-width":"1px", "stroke":"#ffffff"})};
 
 Todos
 -----
 * Currently, only Marker, Ellipse and Polygon are implemented. All else is yet to come...
-* Prepare this to work with the [Closure Compiler] (http://code.google.com/closure/compiler/)
+* Prepare a minified version using the [Closure Compiler] (http://code.google.com/closure/compiler/)
 
