@@ -23,8 +23,8 @@ No5.Seajax.Shapes.Ellipse.prototype.attachTo = function(viewer, x, y) {
    });
 }
 
-No5.Seajax.Shapes.Ellipse.prototype.getNode = function() {
-   return this.ellipse.node;
+No5.Seajax.Shapes.Ellipse.prototype.getElement = function() {
+   return this.ellipse;
 }
 
 No5.Seajax.Shapes.Ellipse.prototype.redraw = function(viewer) { 
