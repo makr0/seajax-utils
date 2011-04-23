@@ -1,7 +1,7 @@
 # no.5 Seajax Utils
 
 A utility library for the [Seadragon AJAX viewer] (http://expression.microsoft.com/en-us/gg413362.aspx). no.5 Seajax Utils act as a bridge between Seadragon AJAX and the [Raphael] (http://raphaeljs.com) JavaScript vector drawing & animation library, so that  Raphael drawing elements can be used as overlays on Deep Zoom images (including images hosted on
-[zoom.it] (http://zoom.it). 
+[zoom.it] (http://zoom.it)). 
 
 ## Getting Started
 
