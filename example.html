@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>no.5 Seajax Utils Example</title>
+    <style type="text/css">
+      body {
+        margin: 0px;
+        width:100%;
+        font-family: Verdana;
+      }
+    
+      #viewer{
+        width: 800px;
+        height: 600px;
+        margin: 10px auto 0px auto;
+        border: 1px solid black;
+        color: white;   /* for error messages */
+      }
+    </style>
+
+    <script type="text/javascript" src="http://seadragon.com/ajax/0.8/seadragon-min.js"></script>
+
+    <script type="text/javascript" src="js/raphael-min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+
+    <script type="text/javascript" src="seajax-utils.js"></script>
+    <script type="text/javascript" src="Shapes/Ellipse.js"></script>
+    <script type="text/javascript" src="Shapes/Marker.js"></script>
+    <script type="text/javascript" src="Shapes/Polygon.js"></script>
+
+    <script type="text/javascript">
+      var viewer;
+
+      function onZoomitResponse(response) {
+        if (response.error) {
+          alert(response.error);
+          return;
+        }
+     
+        var content = response.content;
+        if (content.ready) {
+          viewer = new Seadragon.Viewer("viewer");
+          viewer.addEventListener("open", addOverlays);
+          viewer.openDzi(content.dzi);
+        } else if (content.failed) {
+          alert(content.url + " failed to convert.");
+        } else {
+          alert(content.url + " is " + Math.round(100 * content.progress) + "% done.");
+        }
+      }
+ 
+      $.ajax({
+        url: "http://api.zoom.it/v1/content/WwI0",
+        dataType: "jsonp",
+        success: onZoomitResponse
+      });
+     		
+      function addOverlays() {
+        var ellipse = new No5.Seajax.Shapes.Ellipse(1500, 500);
+        ellipse.attachTo(viewer, 20, 800);
+        ellipse.getElement().attr({"fill":"#0fff00", "stroke-color":"#ff0000"});
+      
+        var points = new Array();
+        points[0] = new Seadragon.Point(900, 900);
+        points[1] = new Seadragon.Point(500, 100);
+        points[2] = new Seadragon.Point(600, 600);
+        points[3] = new Seadragon.Point(100, 500);
+        var poly = new No5.Seajax.Shapes.Polygon(points);
+        poly.attachTo(viewer);
+      
+        setTimeout(function() {
+          ellipse.redraw(viewer);
+          poly.redraw(viewer);
+        }, 500);
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="viewer"></div>
+  </body>
+</html>

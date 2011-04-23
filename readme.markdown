@@ -1,11 +1,13 @@
-no.5 Seajax Utils
-=====
+# no.5 Seajax Utils
 
-A utility library for the [Seadragon AJAX viewer] (http://expression.microsoft.com/en-us/gg413362.aspx). The library acts as a bridge between Seadragon AJAX and the [Raphael] (http://raphaeljs.com) JavaScript vector drawing & animation library, so that  Raphael drawing elements can be used as overlays.
+A utility library for the [Seadragon AJAX viewer] (http://expression.microsoft.com/en-us/gg413362.aspx). no.5 Seajax Utils act as a bridge between Seadragon AJAX and the [Raphael] (http://raphaeljs.com) JavaScript vector drawing & animation library, so that  Raphael drawing elements can be used as overlays on Deep Zoom images (including images hosted on
+[zoom.it] (http://zoom.it). 
 
-Code Example
------
-Note that the coordinate system for no.5 Seajax Utils is the original image's pixel coordinates! 
+## Getting Started
+
+The file _example.html_ illustrates how to add a Deep Zoom sample image (hosted on zoom.it) to your page, and add Raphael drawing elements as overlays. Note that the coordinate system for no.5 Seajax Utils is the original image's pixel coordinates! 
+
+## Code Example
 
      function addOverlays() {
         var marker = new No5.Seajax.Shapes.Marker("pushpin-icon.png");
@@ -34,4 +36,3 @@ Todos
 -----
 * Currently, only Marker, Ellipse and Polygon are implemented. All else is yet to come...
 * Prepare a minified version using the [Closure Compiler] (http://code.google.com/closure/compiler/)
-* Confirm whether this works with zoom.it
