@@ -33,7 +33,7 @@ To set drawing attributes, animation behavior, event handlers, etc. you can get 
 
      ellipse.getElement().attr{("fill":"#ff0000", "fill-opacity":0.5, "stroke-width":"1px", "stroke":"#ffffff"})};
 
-Todos
------
+## Todos
+* Although polygon coordinate transformation seems to work correctly, there's a scaling factor of 2 required which I can't explain (may be because of the way zooming factors are defined in Seajax. See comment in source code of Polygon.js) -> investigate this!
 * Currently, only Marker, Ellipse and Polygon are implemented. All else is yet to come...
 * Prepare a minified version using the [Closure Compiler] (http://code.google.com/closure/compiler/)

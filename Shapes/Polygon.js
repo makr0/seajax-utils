@@ -28,6 +28,8 @@ No5.Seajax.Shapes.Polygon = function(points) {
    var paper = Raphael(this.div, 2 * this.width, 2 * this.height);
 
    var maxZoom = viewer.viewport.getMaxZoom();
+   // NOTE! There seems to be a factor of 2 required. Might be because of the way
+   // Zoom levels are defined in Seajax. But frankly I don't know -> investigate!!
    var firstPoint = 2 * (points[0].x - minX) / maxZoom + " " + 2 * (points[0].y - minY) / maxZoom;
 
    var svgFormattedPath = "M" + firstPoint;
