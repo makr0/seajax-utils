@@ -25,14 +25,14 @@ No5.Seajax.Shapes.Polygon = function(points) {
 
    // Create Polygon
    this.div = document.createElement("div");
-   var paper = Raphael(this.div, this.width, this.height);
+   var paper = Raphael(this.div, 2 * this.width, 2 * this.height);
 
    var maxZoom = viewer.viewport.getMaxZoom();
-   var firstPoint = (points[0].x - minX) / maxZoom + " " + (points[0].y - minY) / maxZoom;
+   var firstPoint = 2 * (points[0].x - minX) / maxZoom + " " + 2 * (points[0].y - minY) / maxZoom;
 
    var svgFormattedPath = "M" + firstPoint;
    for (var i=1, len = points.length; i<len; ++i) {
-      svgFormattedPath += "L" + (points[i].x - minX) / maxZoom + " " + (points[i].y - minY) / maxZoom;
+      svgFormattedPath += "L" + 2 * (points[i].x - minX) / maxZoom + " " + 2 * (points[i].y - minY) / maxZoom;
    }
    svgFormattedPath += "L" + firstPoint;
 
@@ -52,8 +52,8 @@ No5.Seajax.Shapes.Polygon.prototype.attachTo = function(viewer, x, y) {
    });
 }
 
-No5.Seajax.Shapes.Polygon.prototype.getNode = function() {
-   return this.path.node;
+No5.Seajax.Shapes.Polygon.prototype.getElement = function() {
+   return this.path;
 }
 
 No5.Seajax.Shapes.Polygon.prototype.redraw = function(viewer) { 
