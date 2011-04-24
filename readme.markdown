@@ -4,7 +4,7 @@ A utility library for the [Seadragon AJAX viewer] (http://expression.microsoft.c
 
 ## Getting Started
 
-The file _example.html_ illustrates how to add Raphael drawing elements as overlays to a Deep Zoom image hosted on [zoom.it] (http://zoom.it).
+The file _example.html_ illustrates how to add Raphael drawing elements as overlays to a Deep Zoom image hosted on [zoom.it] (http://zoom.it/WwI0).
 
 ## Code Example
 
