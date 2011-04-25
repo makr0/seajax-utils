@@ -70,6 +70,13 @@
         points[6] = new Seadragon.Point(3163, 1279);
         var hispania = new No5.Seajax.Shapes.Polygon(points);
         hispania.getElement().attr({"fill":"#ffff44", "fill-opacity":0.5});
+        hispania.getElement().node.style.cursor = "pointer";
+        hispania.getElement().node.onmouseover = function() {  
+          hispania.getElement().attr({"fill":"#ffffff"});
+        } 
+        hispania.getElement().node.onmouseout = function() {  
+          hispania.getElement().attr({"fill":"#ffff44"});
+        }
         hispania.attachTo(viewer);
 
         points = new Array();
@@ -91,6 +98,13 @@
         points[15] = new Seadragon.Point(3094, 1029);
         var anglia = new No5.Seajax.Shapes.Polygon(points);
         anglia.getElement().attr({"fill":"#4444ff", "fill-opacity":0.5});
+        anglia.getElement().node.style.cursor = "pointer";
+        anglia.getElement().node.onmouseover = function() {  
+          anglia.getElement().attr({"fill":"#ffffff"});
+        } 
+        anglia.getElement().node.onmouseout = function() {  
+          anglia.getElement().attr({"fill":"#4444ff"});
+        }
         anglia.attachTo(viewer);
  
         // TODO introduce a mechanism that eliminates the need to do this...
@@ -99,20 +113,6 @@
           hispania.redraw(viewer);
           anglia.redraw(viewer);
         }, 500);
- 
-        // For debug purposes...
-        // addMouseTracker();
-     }
-
-      function addMouseTracker() {
-        mouseTracker = new Seadragon.MouseTracker(document.getElementById('viewer'));
-        mouseTracker.clickHandler = function(tracker, position, quick, shift) {
-          var viewerPoint = viewer.viewport.pointFromPixel(position, true);
-          alert('x=' + viewerPoint.x + ', y=' + viewerPoint.y);
-          var imagePoint = No5.Seajax.toImageCoordinates(viewer, viewerPoint.x, viewerPoint.y);
-          alert('x=' + imagePoint.x + ', y=' + imagePoint.y);
-        };
-        mouseTracker.setTracking(true);
       }
     </script>
   </head>
