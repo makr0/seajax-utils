@@ -6,6 +6,8 @@ A utility library for the [Seadragon AJAX viewer] (http://expression.microsoft.c
 
 The file _example.html_ illustrates how to add Raphael drawing elements as overlays to a Deep Zoom image hosted on [zoom.it] (http://zoom.it/WwI0).
 
+Note: The example file links to the remotly hosted Seadragon library at http://seadragon.com/ajax/0.8/seadragon-min.js. I did not include this file in this repository since I'm not sure about redistribution licensing. For your own project, please grab a copy of the Seadragon AJAX distribution from http://gallery.expression.microsoft.com/SeadragonAjax
+
 ## Code Example
 
 Note that the coordinate system for no.5 Seajax Utils is the original image's pixel coordinates! 
