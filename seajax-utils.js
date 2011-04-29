@@ -4,6 +4,7 @@
 No5 = {};
 No5.Seajax = {};
 No5.Seajax.Shapes = {};
+No5.Seajax.Tilesource = {};
 
 /**
  * Translates from Seajax viewer coordinate 
