@@ -1,0 +1,1 @@
+java -jar c:\closure\compiler.jar --js=src/seajax-utils-core.js --js=src/Shapes/Marker.js --js=src/Shapes/Ellipse.js --js=src/Shapes/Polygon.js --js=src/Tilesource/OSM.js --js=src/Tilesource/TMS.js --js_output_file=seajax-utils.js
